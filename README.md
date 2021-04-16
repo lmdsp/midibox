@@ -4,6 +4,17 @@ A collection of schematics and printed circuit board layouts for various [Midibo
 made with [KiCAD](https://kicad.org/).
 The designs were made with MCU style MIDI control surfaces in mind, but could also be useful for other applications.
 
+- [Midibox PCBs](#midibox-pcbs)
+  - [OLED carrier board](#oled-carrier-board)
+    - [Bill of materials](#bill-of-materials)
+    - [Assembly](#assembly)
+    - [Connections](#connections)
+      - [Internal power](#internal-power)
+      - [External power](#external-power)
+      - [PCB top side / OLED pin headers](#pcb-top-side--oled-pin-headers)
+      - [PCB bottom side / other components](#pcb-bottom-side--other-components)
+  - [TODO](#todo)
+
 ## OLED carrier board
 
 Holds eight 0.96″ OLED screens, spaced by 1.2″ for a compact design.
@@ -47,10 +58,14 @@ The LDO regulator on the core board can only supply 100mA.
 Therefore this PCB has an option to use external 3.3V power through `J2`.
 In this case `JP1` should be set to _Ext_.
 
+#### PCB top side / OLED pin headers
+
 ----
 ![OLED front](oled/oled_front.png)
 
 ----
+
+#### PCB bottom side / other components
 
 ![OLED back](oled/oled_back.png)
 
