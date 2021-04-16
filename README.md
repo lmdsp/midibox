@@ -1,30 +1,44 @@
 # Midibox PCBs
 
-## 8x0.96" OLEDs
+A collection of schematics and printed circuit board layouts for various [Midibox NG](www.ucapps.de) modules,
+made with [KiCAD](https://kicad.org/).
+The designs were made with MCU style MIDI control surfaces in mind, but could also be useful for other applications.
 
-Holds 8 0.96" OLED screens, spaced by 1.2" for a compact design.
-J1 connects to J15A of the STM32F4 core.
-J15_S should be set to 3.3V on the core, and JP1 to __Core__ on this PCB.
+## OLED carrier board
 
-This PCB has an option to use external 3.3V power through J2.
-In this case JP1 should be set to __Ext__.
+Holds eight 0.96″ OLED screens, spaced by 1.2″ for a compact design.
 
-Optional decoupling 100nF caps C1-C8 to improve noise rejection in case of flickering or other issues.
+Only 4-wire SPI, 7-pin OLED types are supported.
+Be sure to check the dimensions and pinout matches before purchase!
 
-Only 4-wire SPI OLED types are supported
+Optional decoupling 100nF caps C1-C8 can be stuffed to improve noise rejection in case of flickering or other issues.
 
 ### Bill of materials
 
-- 8 OLED screens
+- OLED screen x 8
 - 10k 1/4W resistor
 - 10µF/35V radial capacitor
 - 2x8 box connector socket
-- 8 2.54" 7-pin sockets for OLEDs
+- 7-pin sockets x 8 (0.1″ spacing, for the OLEDs)
 - 3-pin header
 - 2-pin jumper
-- 8 100nF ceramic capacitors (optional)
+- 100nF ceramic capacitor x 8 (optional)
 
 ### Assembly
 
 1. Solder the sockets for the OLEDs on the top side
 2. Solder all other components on the bottom side
+
+### Connections
+
+`J1` connects to `J15A` of the STM32F4 core.
+
+#### Internal power
+
+`J15_S` should be set to 3.3V on the core, and `JP1` to _Core_ on this PCB.
+
+#### External power
+
+The LDO regulator on the core board can only supply 100mA.
+Therefore this PCB has an option to use external 3.3V power through `J2`.
+In this case `JP1` should be set to _Ext_.
